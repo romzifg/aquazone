@@ -21,6 +21,7 @@ export const SPECIES = [
     why: "Neon Tetra has been central to our operation since the beginning. Located in Bojongsari — one of Indonesia's most established tetra breeding areas — we work with experienced local farmers who have perfected the breeding technique over decades. Neon Tetra is our primary commodity, and we produce it consistently with stable supply year-round.",
     svgStripeFill: "#3b82f6",
     svgStripeAccent: "#ef4444",
+    img: "/neon-tetra.png",
   },
   {
     id: "cardinal",
@@ -39,6 +40,7 @@ export const SPECIES = [
     why: "Cardinal Tetra commands a premium price in global markets, and rightfully so. Through years of experience handling this species, we understand its requirements intimately — from conditioning to export preparation. It is one of our standout products with consistent quality and stable market demand.",
     svgStripeFill: "#ef4444",
     svgStripeAccent: "#ef4444",
+    img: "/cardinal-tetra.png",
   },
   {
     id: "rummynose",
@@ -57,6 +59,7 @@ export const SPECIES = [
     why: "Rummynose Tetra is a favorite among aquascapers worldwide for its unique appearance and tight schooling behavior. Backed by our experienced farmer network, we supply Rummynose Tetra with consistent quality and sustainable availability for both domestic and international markets.",
     svgStripeFill: "#6b7280",
     svgStripeAccent: "#ef4444",
+    img: "/rummynose-tetra.png",
   },
 ];
 
