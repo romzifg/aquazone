@@ -1,122 +1,107 @@
 import { useState, useEffect } from 'react';
-import { WA_LINK } from '../data/constants';
+import { WA_LINK } from '../data/content';
 
-const NAV_LINKS = [
-  { label: 'Beranda', href: '#beranda' },
-  { label: 'Ikan', href: '#ikan' },
-  { label: 'Kenapa Kami', href: '#keunggulan' },
-  { label: 'Tentang', href: '#tentang' },
-  { label: 'Kontak', href: '#kontak' },
+const LINKS = [
+  { label: 'Home', href: '#home' },
+  { label: 'Species', href: '#species' },
+  { label: 'Why Us', href: '#why' },
+  { label: 'Facility', href: '#facility' },
+  { label: 'FAQ', href: '#faq' },
+  { label: 'Contact', href: '#contact' },
 ];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
+    const fn = () => setScrolled(window.scrollY > 48);
+    window.addEventListener('scroll', fn, { passive: true });
+    return () => window.removeEventListener('scroll', fn);
   }, []);
-
-  const navBg = scrolled
-    ? 'rgba(7,17,28,0.94)'
-    : 'transparent';
-  const navBorder = scrolled
-    ? '1px solid rgba(255,255,255,0.06)'
-    : '1px solid transparent';
 
   return (
     <nav style={{
-      position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
-      background: navBg,
-      backdropFilter: scrolled ? 'blur(18px)' : 'none',
-      borderBottom: navBorder,
-      transition: 'background 0.35s, border-color 0.35s, backdrop-filter 0.35s',
+      position: 'fixed', top: 0, left: 0, right: 0, zIndex: 200,
+      background: scrolled ? 'rgba(5,13,22,0.95)' : 'transparent',
+      backdropFilter: scrolled ? 'blur(20px)' : 'none',
+      borderBottom: scrolled ? '1px solid rgba(255,255,255,0.06)' : '1px solid transparent',
+      transition: 'all 0.35s ease',
     }}>
       <div style={{
-        maxWidth: 1180, margin: '0 auto', padding: '0 28px',
+        maxWidth: 1200, margin: '0 auto', padding: '0 28px',
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-        height: 68,
+        height: 70,
       }}>
         {/* Logo */}
-        <a href="#beranda" style={{ display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none' }}>
+        <a href="#home" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 11 }}>
           <div style={{
-            width: 34, height: 34, borderRadius: 9,
-            background: 'linear-gradient(135deg, #22d3ee 0%, #34d399 100%)',
+            width: 46, height: 46, borderRadius: 8, flexShrink: 0,
+            background: 'linear-gradient(135deg, #ffff 0%, #b3b3b3 100%)',
             display: 'flex', alignItems: 'center', justifyContent: 'center',
-            fontSize: 17, flexShrink: 0,
-          }}>🐠</div>
-          <div style={{ lineHeight: 1.1 }}>
-            <div style={{ fontSize: 17, fontWeight: 700, color: '#ddeeff', letterSpacing: '-0.3px' }}>AquaZone</div>
-            <div style={{ fontSize: 9.5, color: '#22d3ee', letterSpacing: '0.15em', fontWeight: 500, textTransform: 'uppercase' }}>Neon Tetra</div>
+            fontSize: 18,
+          }}>
+            <img src="./mutiara-tetra.png" alt="Mutiara Tetra" style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+          </div>
+          <div style={{ lineHeight: 1.15 }}>
+            <div style={{ fontSize: 15, fontWeight: 700, color: '#e8f4ff', letterSpacing: '-0.2px' }}>Mutiara Tetra</div>
+            <div style={{ fontSize: 9.5, color: '#60a5fa', fontWeight: 500, letterSpacing: '0.18em', textTransform: 'uppercase' }}>Indonesia</div>
           </div>
         </a>
 
-        {/* Desktop links */}
-        <div className="hide-mobile" style={{ display: 'flex', alignItems: 'center', gap: 36 }}>
-          {NAV_LINKS.map(({ label, href }) => (
+        {/* Desktop nav */}
+        <div className="hide-mobile" style={{ display: 'flex', alignItems: 'center', gap: 32 }}>
+          {LINKS.map(({ label, href }) => (
             <a key={label} href={href} style={{
-              color: 'rgba(200,220,240,0.65)', fontSize: 14, fontWeight: 400,
-              textDecoration: 'none', transition: 'color 0.2s',
-              letterSpacing: '0.01em',
+              color: 'rgba(200,220,245,0.6)', fontSize: 13.5, fontWeight: 400,
+              textDecoration: 'none', transition: 'color 0.2s', letterSpacing: '0.01em',
             }}
-              onMouseEnter={e => e.currentTarget.style.color = '#ddeeff'}
-              onMouseLeave={e => e.currentTarget.style.color = 'rgba(200,220,240,0.65)'}
+              onMouseEnter={e => e.currentTarget.style.color = '#e8f4ff'}
+              onMouseLeave={e => e.currentTarget.style.color = 'rgba(200,220,245,0.6)'}
             >{label}</a>
           ))}
           <a href={WA_LINK} target="_blank" rel="noreferrer" style={{
-            background: 'linear-gradient(135deg, #22d3ee, #34d399)',
-            color: '#04111e', padding: '9px 22px', borderRadius: 7,
-            fontSize: 13, fontWeight: 700, textDecoration: 'none',
+            background: '#1d4ed8', color: '#fff',
+            padding: '9px 22px', borderRadius: 7,
+            fontSize: 13, fontWeight: 600, textDecoration: 'none',
+            transition: 'background 0.2s',
             letterSpacing: '0.01em',
-            transition: 'opacity 0.2s',
           }}
-            onMouseEnter={e => e.currentTarget.style.opacity = '0.88'}
-            onMouseLeave={e => e.currentTarget.style.opacity = '1'}
-          >Pesan Sekarang</a>
+            onMouseEnter={e => e.currentTarget.style.background = '#2563eb'}
+            onMouseLeave={e => e.currentTarget.style.background = '#1d4ed8'}
+          >Contact Us</a>
         </div>
 
         {/* Hamburger */}
-        <button
-          className="show-mobile"
-          onClick={() => setMobileOpen(!mobileOpen)}
-          style={{
-            background: 'none', border: 'none', color: '#ddeeff',
-            fontSize: 22, cursor: 'pointer', padding: 4, display: 'none',
-          }}
-          aria-label="Menu"
-        >
-          {mobileOpen ? '✕' : '☰'}
+        <button className="show-mobile" onClick={() => setOpen(!open)} style={{
+          background: 'none', border: 'none', color: '#e8f4ff',
+          fontSize: 22, cursor: 'pointer', padding: 4, display: 'none',
+        }}>
+          {open ? '✕' : '☰'}
         </button>
       </div>
 
       {/* Mobile menu */}
-      {mobileOpen && (
+      {open && (
         <div style={{
-          background: 'rgba(7,17,28,0.98)',
+          background: 'rgba(5,13,22,0.98)',
           borderTop: '1px solid rgba(255,255,255,0.06)',
-          padding: '12px 28px 28px',
+          padding: '8px 28px 24px',
         }}>
-          {NAV_LINKS.map(({ label, href }) => (
-            <a key={label} href={href}
-              onClick={() => setMobileOpen(false)}
-              style={{
-                display: 'block', padding: '13px 0',
-                color: 'rgba(200,220,240,0.75)', fontSize: 15,
-                borderBottom: '1px solid rgba(255,255,255,0.04)',
-                textDecoration: 'none',
-              }}
-            >{label}</a>
+          {LINKS.map(({ label, href }) => (
+            <a key={label} href={href} onClick={() => setOpen(false)} style={{
+              display: 'block', padding: '13px 0',
+              color: 'rgba(200,220,245,0.75)', fontSize: 15,
+              borderBottom: '1px solid rgba(255,255,255,0.04)',
+              textDecoration: 'none',
+            }}>{label}</a>
           ))}
-          <a href={WA_LINK} target="_blank" rel="noreferrer"
-            style={{
-              display: 'block', marginTop: 18, textAlign: 'center',
-              background: 'linear-gradient(135deg, #22d3ee, #34d399)',
-              color: '#04111e', padding: '13px', borderRadius: 8,
-              fontWeight: 700, fontSize: 15, textDecoration: 'none',
-            }}
-          >Pesan Sekarang</a>
+          <a href={WA_LINK} target="_blank" rel="noreferrer" style={{
+            display: 'block', marginTop: 16, textAlign: 'center',
+            background: '#1d4ed8', color: '#fff',
+            padding: '13px', borderRadius: 8,
+            fontWeight: 600, fontSize: 15, textDecoration: 'none',
+          }}>Contact Us</a>
         </div>
       )}
     </nav>
