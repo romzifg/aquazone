@@ -7,7 +7,7 @@ export default function Contact() {
   return (
     <section id="contact" style={{
       padding: 'clamp(80px,10vw,110px) 28px',
-      background: 'linear-gradient(180deg, #071326 0%, #050d16 100%)',
+      background: 'linear-gradient(180deg, #f4fbff 0%, #eaf7ff 100%)',
       position: 'relative', overflow: 'hidden',
     }}>
       {/* Ambient */}
@@ -23,10 +23,11 @@ export default function Contact() {
       <div style={{ maxWidth: 1200, margin: '0 auto', position: 'relative' }}>
         {/* Main CTA card */}
         <div ref={ref} style={{
-          background: 'linear-gradient(135deg, rgba(8,20,40,0.85) 0%, rgba(10,24,48,0.85) 100%)',
+          background: 'linear-gradient(135deg, rgba(255,255,255,0.88) 0%, rgba(232,247,255,0.88) 100%)',
           border: '1px solid rgba(59,130,246,0.18)',
           borderRadius: 20, padding: 'clamp(36px,5vw,60px)',
           backdropFilter: 'blur(16px)',
+          boxShadow: '0 24px 70px rgba(14,165,233,0.12)',
           marginBottom: 48,
           opacity: inView ? 1 : 0,
           transform: inView ? 'translateY(0)' : 'translateY(28px)',
@@ -42,15 +43,15 @@ export default function Contact() {
               </p>
               <h2 style={{
                 fontSize: 'clamp(26px,4vw,46px)', fontWeight: 700,
-                color: '#e8f4ff', lineHeight: 1.1, marginBottom: 16, letterSpacing: '-0.7px',
+                color: '#0f2537', lineHeight: 1.1, marginBottom: 16, letterSpacing: '-0.7px',
               }}>
                 Let's talk about<br />
-                <span style={{ background: 'linear-gradient(120deg,#3b82f6,#60a5fa)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                <span>
                   your tetra needs.
                 </span>
               </h2>
               <p style={{
-                fontSize: 15, color: 'rgba(185,212,242,0.5)', lineHeight: 1.82,
+                fontSize: 15, color: 'rgba(35,74,100,0.68)', lineHeight: 1.82,
                 maxWidth: 480, fontWeight: 300, marginBottom: 32,
               }}>
                 Whether you're a wholesaler, importer, or aquascape supplier — we'd love to
@@ -60,14 +61,14 @@ export default function Contact() {
               <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
                 <a href={WA_LINK} target="_blank" rel="noreferrer" style={{
                   display: 'inline-flex', alignItems: 'center', gap: 10,
-                  background: '#1d4ed8', color: '#fff',
+                  background: '#0ea5e9', color: '#fff',
                   padding: '14px 30px', borderRadius: 9,
                   fontWeight: 700, fontSize: 14, textDecoration: 'none',
                   transition: 'background 0.2s, transform 0.2s',
                   boxShadow: '0 0 32px rgba(29,78,216,0.35)',
                 }}
-                  onMouseEnter={e => { e.currentTarget.style.background = '#2563eb'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
-                  onMouseLeave={e => { e.currentTarget.style.background = '#1d4ed8'; e.currentTarget.style.transform = ''; }}
+                  onMouseEnter={e => { e.currentTarget.style.background = '#0284c7'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
+                  onMouseLeave={e => { e.currentTarget.style.background = '#0ea5e9'; e.currentTarget.style.transform = ''; }}
                 >
                   <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
                     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
@@ -77,13 +78,13 @@ export default function Contact() {
                 </a>
                 <a href={`mailto:${EMAIL}`} style={{
                   display: 'inline-flex', alignItems: 'center', gap: 9,
-                  border: '1px solid rgba(255,255,255,0.14)', color: 'rgba(200,225,255,0.7)',
+                  border: '1px solid rgba(255,255,255,0.14)', color: 'rgba(15,37,55,0.72)',
                   padding: '14px 26px', borderRadius: 9,
                   fontSize: 14, fontWeight: 500, textDecoration: 'none',
                   transition: 'border-color 0.2s, color 0.2s',
                 }}
-                  onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.3)'; e.currentTarget.style.color = '#e8f4ff'; }}
-                  onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.14)'; e.currentTarget.style.color = 'rgba(200,225,255,0.7)'; }}
+                  onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.3)'; e.currentTarget.style.color = '#0f2537'; }}
+                  onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.14)'; e.currentTarget.style.color = 'rgba(15,37,55,0.72)'; }}
                 >
                   ✉ Send Email
                 </a>
@@ -103,8 +104,8 @@ export default function Contact() {
                     </svg>
                   </div>
                   <div>
-                    <div style={{ fontSize: 10.5, color: 'rgba(190,215,245,0.38)', fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase' }}>WhatsApp</div>
-                    <div style={{ fontSize: 13, color: 'rgba(200,225,250,0.72)', fontWeight: 400, marginTop: 2 }}>+62 822-1056-0885</div>
+                    <div style={{ fontSize: 10.5, color: 'rgba(35,74,100,0.52)', fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase' }}>WhatsApp</div>
+                    <div style={{ fontSize: 13, color: 'rgba(15,37,55,0.82)', fontWeight: 400, marginTop: 2 }}>+62 822-1056-0885</div>
                   </div>
                 </div>
 
@@ -127,8 +128,8 @@ export default function Contact() {
                     </svg>
                   </div>
                   <div>
-                    <div style={{ fontSize: 10.5, color: 'rgba(190,215,245,0.38)', fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase' }}>Instagram</div>
-                    <div style={{ fontSize: 13, color: 'rgba(200,225,250,0.72)', fontWeight: 400, marginTop: 2 }}>@mutiaratetra.id</div>
+                    <div style={{ fontSize: 10.5, color: 'rgba(35,74,100,0.52)', fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase' }}>Instagram</div>
+                    <div style={{ fontSize: 13, color: 'rgba(15,37,55,0.82)', fontWeight: 400, marginTop: 2 }}>@mutiaratetra.id</div>
                   </div>
                 </div>
 
@@ -140,50 +141,50 @@ export default function Contact() {
                     </svg>
                   </div>
                   <div>
-                    <div style={{ fontSize: 10.5, color: 'rgba(190,215,245,0.38)', fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase' }}>Facebook</div>
-                    <div style={{ fontSize: 13, color: 'rgba(200,225,250,0.72)', fontWeight: 400, marginTop: 2 }}>Mutiara Tetra Indonesia</div>
+                    <div style={{ fontSize: 10.5, color: 'rgba(35,74,100,0.52)', fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase' }}>Facebook</div>
+                    <div style={{ fontSize: 13, color: 'rgba(15,37,55,0.82)', fontWeight: 400, marginTop: 2 }}>Mutiara Tetra Indonesia</div>
                   </div>
                 </div>
 
                 {/* Email */}
                 <div style={{ display: 'flex', alignItems: 'flex-start', gap: 12 }}>
                   <div style={{ width: 36, height: 36, borderRadius: 8, flexShrink: 0, background: 'rgba(29,78,216,0.12)', border: '1px solid rgba(59,130,246,0.25)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#60a5fa" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#0ea5e9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <rect x="2" y="4" width="20" height="16" rx="2" />
                       <polyline points="2,4 12,13 22,4" />
                     </svg>
                   </div>
                   <div>
-                    <div style={{ fontSize: 10.5, color: 'rgba(190,215,245,0.38)', fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase' }}>Email</div>
-                    <div style={{ fontSize: 13, color: 'rgba(200,225,250,0.72)', fontWeight: 400, marginTop: 2 }}>{EMAIL}</div>
+                    <div style={{ fontSize: 10.5, color: 'rgba(35,74,100,0.52)', fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase' }}>Email</div>
+                    <div style={{ fontSize: 13, color: 'rgba(15,37,55,0.82)', fontWeight: 400, marginTop: 2 }}>{EMAIL}</div>
                   </div>
                 </div>
 
                 {/* Location */}
                 <div style={{ display: 'flex', alignItems: 'flex-start', gap: 12 }}>
                   <div style={{ width: 36, height: 36, borderRadius: 8, flexShrink: 0, background: 'rgba(29,78,216,0.12)', border: '1px solid rgba(59,130,246,0.25)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#60a5fa" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#0ea5e9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
                       <circle cx="12" cy="9" r="2.5" />
                     </svg>
                   </div>
                   <div>
-                    <div style={{ fontSize: 10.5, color: 'rgba(190,215,245,0.38)', fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase' }}>Location</div>
-                    <div style={{ fontSize: 13, color: 'rgba(200,225,250,0.72)', fontWeight: 400, marginTop: 2 }}>Bojongsari, Depok, Indonesia</div>
+                    <div style={{ fontSize: 10.5, color: 'rgba(35,74,100,0.52)', fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase' }}>Location</div>
+                    <div style={{ fontSize: 13, color: 'rgba(15,37,55,0.82)', fontWeight: 400, marginTop: 2 }}>Bojongsari, Depok, Indonesia</div>
                   </div>
                 </div>
 
                 {/* Response Time */}
                 <div style={{ display: 'flex', alignItems: 'flex-start', gap: 12 }}>
                   <div style={{ width: 36, height: 36, borderRadius: 8, flexShrink: 0, background: 'rgba(29,78,216,0.12)', border: '1px solid rgba(59,130,246,0.25)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#60a5fa" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="#0ea5e9" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                       <circle cx="12" cy="12" r="10" />
                       <polyline points="12,6 12,12 16,14" />
                     </svg>
                   </div>
                   <div>
-                    <div style={{ fontSize: 10.5, color: 'rgba(190,215,245,0.38)', fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase' }}>Response Time</div>
-                    <div style={{ fontSize: 13, color: 'rgba(200,225,250,0.72)', fontWeight: 400, marginTop: 2 }}>Within 24 hours</div>
+                    <div style={{ fontSize: 10.5, color: 'rgba(35,74,100,0.52)', fontWeight: 500, letterSpacing: '0.08em', textTransform: 'uppercase' }}>Response Time</div>
+                    <div style={{ fontSize: 13, color: 'rgba(15,37,55,0.82)', fontWeight: 400, marginTop: 2 }}>Within 24 hours</div>
                   </div>
                 </div>
 
@@ -205,13 +206,13 @@ export default function Contact() {
             { icon: '🌐', title: 'Export Documentation', desc: 'We handle health certificates, CITES documentation (if required), and all export paperwork.' },
           ].map(c => (
             <div key={c.title} style={{
-              background: 'rgba(7,16,30,0.65)',
-              border: '1px solid rgba(255,255,255,0.07)',
+              background: 'rgba(255,255,255,0.78)',
+              border: '1px solid rgba(14,165,233,0.16)',
               borderRadius: 13, padding: '22px 20px',
             }}>
               <div style={{ fontSize: 22, marginBottom: 12 }}>{c.icon}</div>
-              <div style={{ fontSize: 14, fontWeight: 600, color: '#c8dff5', marginBottom: 8 }}>{c.title}</div>
-              <p style={{ fontSize: 12.5, lineHeight: 1.72, color: 'rgba(170,200,235,0.48)', fontWeight: 300 }}>{c.desc}</p>
+              <div style={{ fontSize: 14, fontWeight: 600, color: '#15384f', marginBottom: 8 }}>{c.title}</div>
+              <p style={{ fontSize: 12.5, lineHeight: 1.72, color: 'rgba(35,74,100,0.60)', fontWeight: 300 }}>{c.desc}</p>
             </div>
           ))}
         </div>
